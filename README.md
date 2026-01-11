@@ -12,16 +12,16 @@
 
 ````bash
 npm install
-npm run dev```
+npm run dev
 ````
 
 ### Option B: Docker development
 
-`docker compose up --build`
+```docker compose up --build```
 
 app runs at http://localhost:3000
 
-`docker compose down`
+```docker compose down```
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
