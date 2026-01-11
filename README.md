@@ -1,4 +1,4 @@
-### DEVELOPMENT
+## DEVELOPMENT
 
 1. Install Volta
    mac: in terminal `curl https://get.volta.sh | bash`
@@ -8,14 +8,14 @@
 4. Install node and npm versions `volta install node@20.19.6 npm@10.2.4`
 5. Verfy node versions inside project directory `node -v` `npm -v`
 
-## Option A: local dev (Volta)\
+### Option A: local dev (Volta)
 
 ````bash
 npm install
 npm run dev```
 ````
 
-## Option B: Docker development
+### Option B: Docker development
 
 `docker compose up --build`
 
