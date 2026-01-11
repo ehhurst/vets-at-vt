@@ -1,3 +1,19 @@
+### DEVELOPMENT
+1. Install Volta
+   mac: in terminal `curl https://get.volta.sh | bash`
+   windows powershell `winget install Volta.Volta`
+3. Resart terminal
+4. Verify installation with `volta -v`
+5. Install node and npm versions `volta install node@20.19.6 npm@10.2.4`
+6. Verfy node versions inside project directory `node -v` `npm -v`
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
