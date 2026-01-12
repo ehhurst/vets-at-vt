@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-vt-maroon: #861F41;
+  --color-vt-burntOrange: #CF4420;
+  --color-vt-impactOrange: #CA4F00;
+  --color-vt-hokieStone: #75787B;
+  --color-vt-white: #FFFFFF;
+  --color-vt-smoke: #E5E1E6;
+  --color-vt-grey: #D7D2CB;
+}
+
+@font-face {
+  font-family: 'VirginiaTechFont_acherus_grotesque_-_bold';
+  src: url('/fonts/acherus_grotesque_-_bold.otf') format('opentype');
+    
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'VirginiaTechFont_acherus_grotesque_-_regular';
+  src: url('/fonts/acherus_grotesque_-_regular.otf') format('opentype');
+    
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'VirginiaTechFont_acherus_grotesque_-_extrabold';
+  src: url('/fonts/acherus_grotesque_-_extrabold.otf') format('opentype');
+    
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-vt-bold: 'VirginiaTechFont_acherus_grotesque_-_bold', sans-serif;
+  --font-vt-extrabold: 'VirginiaTechFont_acherus_grotesque_-_extrabold', sans-serif;
+  --font-vt-normal: 'VirginiaTechFont_acherus_grotesque_-_regular', sans-serif;
+  --color-vt-maroon: #861F41;
+  --color-vt-burntOrange: #CF4420;
+  --color-vt-impactOrange: #CA4F00;
+  --color-vt-hokieStone: #75787B;
+  --color-vt-white: #FFFFFF;
+  --color-vt-smoke: #E5E1E6;
+  --color-vt-grey: #D7D2CB;
+  --color-vt-pink: #CE0058;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
