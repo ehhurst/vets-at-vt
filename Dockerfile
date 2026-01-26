@@ -4,6 +4,9 @@ FROM node:20-alpine
 # Create app directory
 WORKDIR /app
 
+# Add build deps needed for node-gyp (bufferutil via @vercel/postgres/ws)
+RUN apk add --no-cache python3 make g++
+
 # Copy dependency files first (better caching)
 COPY package.json package-lock.json* ./
 
