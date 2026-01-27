@@ -32,7 +32,7 @@ export default function NavBar() {
                 </li>
                 {/* calendar link button */ }
                 <li>
-                    <Link className="bg-vt-impactOrange text-white p-4 rounded-md hover:bg-vt-maroon" href="/calendar">Calendar (Requires Login)</Link>
+                    <Link className="bg-vt-impactOrange text-white p-4 rounded-md hover:bg-vt-maroon transition" href="/calendar">Calendar (Requires Login)</Link>
                 </li>
             </ul>
         </nav>
