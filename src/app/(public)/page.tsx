@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 flex flex-col items-start justify-center px-4 sm:px-8 md:px-12">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-4 max-w-full sm:max-w-xl md:max-w-2xl" style={{ textShadow: '0 4px 6px rgba(0,0,0,0.5)' }}>
-            Supporting Virginia Tech's Military-Connected Community
+            Supporting Virginia Tech&apos;s Military-Connected Community
           </h1>
           <p className="text-sm sm:text-lg md:text-xl text-white mb-4 sm:mb-6 md:mb-8 max-w-full sm:max-w-xl md:max-w-2xl" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
             A safe, welcoming space for veterans, service members, and dependents at VT
