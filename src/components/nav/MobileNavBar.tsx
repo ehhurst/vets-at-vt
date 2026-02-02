@@ -61,7 +61,7 @@ export default function MobileNavBar() {
                     </Link>
                 ))}
                 </nav>
-                <Link className="bg-vt-impactOrange text-white p-4 rounded-md hover:bg-vt-maroon" href="/calendar">Calendar (Requires Login)</Link>
+                <Link className="bg-vt-impactOrange text-white p-4 rounded-md hover:bg-vt-maroon" href="/login">Calendar (Requires Login)</Link>
             </aside> 
         </div>
         );

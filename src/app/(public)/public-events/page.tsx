@@ -5,6 +5,7 @@ import { Event } from "@/src/types/Event";
 import { fakeCalendarResponse } from "@/src/types/FakeCalendarResponse";
 import { useMemo, useState } from "react";
 import EventsFilter, { EventsFilters } from "@/src/components/events/EventsFilter";
+import Link from "next/link";
 
 function isOnlineLocation(location?: string) {
   if (!location) return false;
@@ -49,9 +50,25 @@ export default function PublicEventsPage() {
   return (
     <div className="px-4 max-w-5xl mx-auto ">
       {/* hero image + title */}
-      <div> 
-        <h1 className="text-3xl font-bold text-white bg-vt-maroon py-10 px-4">Upcoming Events</h1>
-      </div>
+            <section className="relative h-[220px] sm:h-[280px] md:h-[320px] bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
+        <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
+
+        <div className="relative mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 text-center">
+          <h1 className="text-4xl sm:text-5xl font-vt-bold text-white">Upcoming Events</h1>
+
+          <nav aria-label="Breadcrumb" className="mt-3 text-xs sm:text-sm text-white/80">
+            <ol className="flex items-center gap-2">
+              <li>
+                <Link href="/" className="hover:text-white hover:underline underline-offset-2">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">›</li>
+              <li className="text-white">Public Events</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
 
       <div className=" bg-gray-100 p-4">
         <h2 className="font-semibold text-vt-maroon text-2xl">Join Us at Veterans@VT</h2>
