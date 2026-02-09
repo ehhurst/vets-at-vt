@@ -10,21 +10,21 @@ export default function EventCard({ event }: { event: Event }) {
       className="
         flex flex-col sm:flex-row
         rounded-md overflow-hidden
-        border-2 border-gray-100 dark:border-white/10
-        bg-white dark:bg-black
-
+        border-2 border-white/10
+        bg-[#1a1e22]
         shadow-sm
-        hover:shadow-md
-        dark:shadow-black/40
-        transition-shadow
-        hover: cursor-pointer
+        transition-all
+        duration-200
+        hover:-translate-y-0.5
+        hover:shadow-lg
+        hover:cursor-pointer
       "
     >
 
       {/* Date */}
       <div
         className="
-          bg-gray-100 dark:bg-white/5
+          bg-[#20252a]
           p-4
           flex justify-center sm:items-center
         "
@@ -34,26 +34,26 @@ export default function EventCard({ event }: { event: Event }) {
 
       {/* Event details */}
       <div className="flex-1 space-y-1 p-4">
-        <h3 className="text-xl font-vt-extrabold text-vt-maroon dark:text-white">
+        <h3 className="text-xl font-vt-extrabold text-white/95">
           {event.summary}
         </h3>
 
-        <p className="text-lg text-gray-800 dark:text-white/80">
+        <p className="text-lg text-white/85">
           {formatDate(event.startISO)}
         </p>
 
-        <p className="text-sm sm:text-lg text-gray-800 dark:text-white/80">
+        <p className="text-sm sm:text-lg text-white/85">
           {formatTimeRange(event.startISO, event.endISO)}
         </p>
 
         {event.location && (
-          <p className="text-md text-gray-500 dark:text-white/60">
+          <p className="text-md text-white/65">
             {event.location}
           </p>
         )}
 
         {event.description && (
-          <p className="text-md text-gray-700 dark:text-white/70 leading-relaxed">
+          <p className="text-md text-white/75 leading-relaxed">
             {event.description}
           </p>
         )}

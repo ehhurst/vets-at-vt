@@ -44,7 +44,7 @@ export default function EventsFilter({
 
   return (
     <Menu as="div" className="relative inline-block p-4">
-      <MenuButton className="inline-flex w-full items-center justify-center gap-x-2 rounded-md bg-vt-impactOrange px-4 py-3 text-base font-semibold text-white shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-vt-maroon hover:cursor-pointer dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20">
+      <MenuButton className="inline-flex w-full items-center justify-center gap-x-2 rounded-md bg-vt-impactOrange px-4 py-3 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg hover:cursor-pointer">
         <MdFilterListAlt aria-hidden="true" className="size-5 text-white" />
         <span>Filter Events</span>
 
@@ -59,12 +59,12 @@ export default function EventsFilter({
 
       <MenuItems
         transition
-        className="absolute right-0 z-10 mt-2 w-72 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
+        className="absolute right-0 z-10 mt-2 w-72 origin-top-right rounded-md bg-[#1a1e22] shadow-lg outline-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
       >
         <div className="p-3">
           {/* TIME RANGE */}
           <div className="mb-3">
-            <p className="px-1 pb-2 text-xs font-semibold tracking-wide text-gray-500 dark:text-gray-300">
+            <p className="px-1 pb-2 text-xs font-semibold tracking-wide text-white/60">
               TIME RANGE
             </p>
             <div className="space-y-1">
@@ -76,15 +76,15 @@ export default function EventsFilter({
                       onClick={() => onChange({ ...value, timeRange: opt.value })}
                       className={[
                         "w-full rounded px-3 py-2 text-left text-sm",
-                        focus ? "bg-gray-100 dark:bg-white/10" : "",
+                        focus ? "bg-[#20252a]" : "",
                         value.timeRange === opt.value
-                          ? "font-semibold text-gray-900 dark:text-white"
-                          : "text-gray-700 dark:text-gray-200",
+                          ? "font-semibold text-white"
+                          : "text-white/80",
                       ].join(" ")}
                     >
                       {opt.label}
                       {value.timeRange === opt.value && (
-                        <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                        <span className="ml-2 text-xs text-white/60">
                           (selected)
                         </span>
                       )}
@@ -97,7 +97,7 @@ export default function EventsFilter({
 
           {/* LOCATION */}
           <div className="mb-3">
-            <p className="px-1 pb-2 text-xs font-semibold tracking-wide text-gray-500 dark:text-gray-300">
+            <p className="px-1 pb-2 text-xs font-semibold tracking-wide text-white/60">
               LOCATION
             </p>
             <div className="space-y-1">
@@ -109,15 +109,15 @@ export default function EventsFilter({
                       onClick={() => onChange({ ...value, location: opt.value })}
                       className={[
                         "w-full rounded px-3 py-2 text-left text-sm",
-                        focus ? "bg-gray-100 dark:bg-white/10" : "",
+                        focus ? "bg-[#20252a]" : "",
                         value.location === opt.value
-                          ? "font-semibold text-gray-900 dark:text-white"
-                          : "text-gray-700 dark:text-gray-200",
+                          ? "font-semibold text-white"
+                          : "text-white/80",
                       ].join(" ")}
                     >
                       {opt.label}
                       {value.location === opt.value && (
-                        <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                        <span className="ml-2 text-xs text-white/60">
                           (selected)
                         </span>
                       )}
@@ -129,7 +129,7 @@ export default function EventsFilter({
           </div>
 
           {/* ACTIONS */}
-          <div className="flex items-center justify-between border-t border-gray-200 pt-3 dark:border-white/10">
+          <div className="flex items-center justify-between border-t border-white/10 pt-3">
             <MenuItem>
               {({ focus }) => (
                 <button
@@ -137,8 +137,8 @@ export default function EventsFilter({
                   onClick={() => onClear?.()}
                   className={[
                     "rounded px-3 py-2 text-sm",
-                    focus ? "bg-gray-100 dark:bg-white/10" : "",
-                    "text-gray-700 dark:text-gray-200",
+                    focus ? "bg-[#20252a]" : "",
+                    "text-white/80",
                   ].join(" ")}
                 >
                   Clear
@@ -146,7 +146,7 @@ export default function EventsFilter({
               )}
             </MenuItem>
 
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-white/60">
               Tip: Online = Zoom/Teams/etc.
             </p>
           </div>

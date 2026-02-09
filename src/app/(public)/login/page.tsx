@@ -83,25 +83,25 @@ export default function LoginForm({
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-black dark:to-gray-900 px-4">
+    <main className="min-h-screen flex items-center justify-center bg-[#14171a] px-4">
 
     <section
-      className="mx-auto inline-block rounded-xl border border-gray-200 bg-white shadow-lg dark:border-white/10 dark:bg-gray-900"
+      className="mx-auto inline-block rounded-xl border border-white/10 bg-[#1a1e22] shadow-lg"
       aria-label="Login"
     >
       <form onSubmit={handleSubmit} className="w-[360px] sm:w-[420px]" noValidate>
         <div className="p-6 sm:p-8">
-          <h2 className="text-2xl font-vt-bold text-gray-800 dark:text-gray-100">
+          <h2 className="text-2xl font-vt-bold text-white/95">
             Sign in
           </h2>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+          <p className="mt-1 text-sm text-white/70">
             Use your email and password to access member features.
           </p>
 
           <div className="mt-6 space-y-4">
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-800 dark:text-gray-100">
+              <label htmlFor="email" className="block text-sm font-medium text-white/80">
                 Email
               </label>
               <input
@@ -114,10 +114,10 @@ export default function LoginForm({
                 onChange={(e) => setEmail(e.target.value)}
                 className={[
                   "mt-1 w-full rounded-md border px-3 py-2",
-                  "bg-white dark:bg-gray-900",
-                  "text-gray-900 dark:text-gray-100",
-                  "border-gray-300 dark:border-white/10",
-                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900",
+                  "bg-[#20252a]",
+                  "text-white/90",
+                  "border-white/10",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange",
                   emailError ? "border-red-400 focus-visible:ring-red-400" : "",
                 ].join(" ")}
                 placeholder="you@vt.edu"
@@ -126,7 +126,7 @@ export default function LoginForm({
                 required
               />
               {emailError && (
-                <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
+                <p id="email-error" className="mt-1 text-sm text-red-400" role="alert">
                   {emailError}
                 </p>
               )}
@@ -134,7 +134,7 @@ export default function LoginForm({
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-800 dark:text-gray-100">
+              <label htmlFor="password" className="block text-sm font-medium text-white/80">
                 Password
               </label>
               <input
@@ -146,10 +146,10 @@ export default function LoginForm({
                 onChange={(e) => setPassword(e.target.value)}
                 className={[
                   "mt-1 w-full rounded-md border px-3 py-2",
-                  "bg-white dark:bg-gray-900",
-                  "text-gray-900 dark:text-gray-100",
-                  "border-gray-300 dark:border-white/10",
-                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900",
+                  "bg-[#20252a]",
+                  "text-white/90",
+                  "border-white/10",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange",
                   passwordError ? "border-red-400 focus-visible:ring-red-400" : "",
                 ].join(" ")}
                 placeholder="••••••••"
@@ -158,7 +158,7 @@ export default function LoginForm({
                 required
               />
               {passwordError && (
-                <p id="password-error" className="mt-1 text-sm text-red-600" role="alert">
+                <p id="password-error" className="mt-1 text-sm text-red-400" role="alert">
                   {passwordError}
                 </p>
               )}
@@ -167,7 +167,7 @@ export default function LoginForm({
             <div className="flex items-center justify-between gap-3">
               <a
                 href="/forgot-password"
-                className="text-sm font-semibold text-vt-impactOrange hover:underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
+                className="text-sm font-semibold text-white/80 hover:text-vt-impactOrange hover:underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
               >
                 Forgot password?
               </a>
@@ -175,7 +175,7 @@ export default function LoginForm({
 
             {status === "error" && errorMsg && (
               <div
-                className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-200"
+                className="rounded-md border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200"
                 role="alert"
               >
                 {errorMsg}
@@ -184,7 +184,7 @@ export default function LoginForm({
 
             {status === "success" && (
               <div
-                className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700 dark:border-green-500/30 dark:bg-green-500/10 dark:text-green-200"
+                className="rounded-md border border-green-500/30 bg-green-500/10 p-3 text-sm text-green-200"
                 role="status"
               >
                 Signed in successfully. Redirecting…
@@ -194,11 +194,11 @@ export default function LoginForm({
         </div>
 
         {/* Full-width footer submit button */}
-        <div className="border-t border-gray-200 dark:border-white/10">
+        <div className="border-t border-white/10">
           <button
             type="submit"
             disabled={!canSubmit}
-            className="w-full rounded-b-xl bg-vt-impactOrange p-4 text-base font-semibold text-white hover:bg-vt-maroon hover:cursor-pointer"
+            className="w-full rounded-b-xl bg-vt-impactOrange p-4 text-base font-semibold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
           >
             {status === "submitting" ? "Signing in..." : "Sign in"}
           </button>

@@ -41,14 +41,14 @@ export default function ContactForm() {
   return (
 
 
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 text-white/90">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium">
+        <label htmlFor="name" className="block text-sm font-medium text-white/80">
           Name
         </label>
         <input
           id="name"
-          className="mt-1 w-full rounded-md border px-3 py-2"
+          className="mt-1 w-full rounded-md border border-white/10 bg-[#20252a] px-3 py-2 text-white/90 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Name"
@@ -57,13 +57,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="userEmail" className="block text-sm font-medium">
-          Email <span className="text-red-600">*</span>
+        <label htmlFor="userEmail" className="block text-sm font-medium text-white/80">
+          Email <span className="text-red-500">*</span>
         </label>
         <input
           id="userEmail"
           type="email"
-          className="mt-1 w-full rounded-md border px-3 py-2"
+          className="mt-1 w-full rounded-md border border-white/10 bg-[#20252a] px-3 py-2 text-white/90 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
           value={userEmail}
           onChange={(e) => setUserEmail(e.target.value)}
           placeholder="you@example.com"
@@ -72,13 +72,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="userMessage" className="block text-sm font-medium">
-          Message <span className="text-red-600">*</span>
+        <label htmlFor="userMessage" className="block text-sm font-medium text-white/80">
+          Message <span className="text-red-500">*</span>
         </label>
         <textarea
           id="userMessage"
           rows={6}
-          className="mt-1 w-full rounded-md border px-3 py-2"
+          className="mt-1 w-full rounded-md border border-white/10 bg-[#20252a] px-3 py-2 text-white/90 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
           placeholder="Enter your message here..."
@@ -87,11 +87,11 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-600">{errorMsg}</p>
+        <p className="text-sm text-red-400">{errorMsg}</p>
       )}
 
       {status === "sent" && (
-        <p className="text-sm text-green-700">Message sent — thank you!</p>
+        <p className="text-sm text-green-400">Message sent — thank you!</p>
       )}
 
       {/* Divider */}
@@ -99,7 +99,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full rounded-md bg-vt-impactOrange py-3 font-semibold text-white hover:bg-vt-maroon disabled:opacity-60"
+          className="w-full rounded-md bg-vt-impactOrange py-3 font-semibold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg disabled:opacity-60"
         >
           {status === "sending" ? "Sending..." : "Submit"}
         </button>
