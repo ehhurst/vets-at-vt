@@ -37,10 +37,10 @@ export default function ResourceCard({ resource }: { resource: ResourceItem }) {
   };
 
   return (
-    <article className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow dark:border-white/10 dark:bg-gray-900">
+    <article className="rounded-xl border border-white/10 bg-[#1a1e22] p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
       <div className="flex items-start gap-3">
         <div
-          className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-white/10"
+          className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#20252a]"
           aria-hidden="true"
         >
           <MdInsertDriveFile className="text-vt-maroon" size={20} />
@@ -48,35 +48,35 @@ export default function ResourceCard({ resource }: { resource: ResourceItem }) {
 
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <h4 className="text-base font-vt-bold text-gray-900 dark:text-white">
+            <h4 className="text-base font-vt-bold text-white/95">
               {resource.title}
             </h4>
 
-            <span className="rounded-full border border-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-700 dark:border-white/10 dark:text-gray-200">
+            <span className="rounded-full border border-white/10 px-2 py-0.5 text-xs font-semibold text-white/75">
               {resource.fileType}
             </span>
 
             {resource.fileSize && (
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+              <span className="text-xs text-white/60">
                 {resource.fileSize}
               </span>
             )}
 
             {updated && (
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+              <span className="text-xs text-white/60">
                 • Updated {updated}
               </span>
             )}
           </div>
 
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+          <p className="mt-2 text-sm text-white/70">
             {resource.description}
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
             <a
               href={resource.href}
-              className="inline-flex items-center gap-2 rounded-md bg-vt-impactOrange px-3 py-2 text-sm font-semibold text-white hover:bg-vt-maroon focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-md bg-vt-impactOrange px-3 py-2 text-sm font-semibold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange focus-visible:ring-offset-2"
               download={resource.fileType !== "LINK"}
             >
               <MdDownload aria-hidden="true" />
@@ -87,7 +87,7 @@ export default function ResourceCard({ resource }: { resource: ResourceItem }) {
               <button
                 type="button"
                 onClick={handlePrint}
-                className="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon focus-visible:ring-offset-2 dark:border-white/10 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-[#20252a] px-3 py-2 text-sm font-semibold text-white/90 ring-1 ring-inset ring-white/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2a3036] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange focus-visible:ring-offset-2"
               >
                 <MdPrint aria-hidden="true" />
                 Print

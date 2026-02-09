@@ -28,11 +28,11 @@ export default function NavBar() {
 
                 {/* vertical divider */ }
                 <li> 
-                    <div className="border-l border-gray-400 h-8"></div>
+                    <div className="border-l border-white/20 h-8"></div>
                 </li>
                 {/* calendar link button */ }
                 <li>
-                    <Link className="bg-vt-impactOrange text-white p-4 rounded-md hover:bg-vt-maroon transition" href="/login">Calendar (Requires Login)</Link>
+                    <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg dark:bg-vt-maroon" href="/login">Calendar (Requires Login)</Link>
                 </li>
             </ul>
         </nav>

@@ -8,8 +8,9 @@ export function IconLink({href, label, icon, openInNewTab}:IconLinkProps) {
             href={href}
             aria-label={openInNewTab ? `${label} (opens in a new tab)` : label} 
             {...externalProps}
-            className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:text-vt-maroon
-                 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon focus-visible:ring-offset-2">
+            className="group relative inline-flex items-center justify-center rounded-md p-2 text-white/90 hover:text-vt-impactOrange
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange focus-visible:ring-offset-2
+                 focus-visible:ring-offset-[#14171a]">
             {icon}
 
             {/*tooltip*/}

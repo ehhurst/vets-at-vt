@@ -24,13 +24,13 @@ export default function DateCard({ isoDate }: DateCardProps) {
       </div>
 
       {/*month/date container */}
-      <div className="w-full border-2 border-vt-impactOrange rounded-b-sm py-2 bg-white dark:bg-black">
+      <div className="w-full rounded-b-sm border-2 border-vt-impactOrange bg-[#20252a] py-2">
 
-        <p className="text-xs sm:text-sm uppercase tracking-wide text-black dark:text-white/80">
+        <p className="text-xs uppercase tracking-wide text-white/80 sm:text-sm">
           {month}
         </p>
 
-        <p className="text-lg sm:text-2xl font-vt-bold leading-none text-black dark:text-white">
+        <p className="text-lg font-vt-bold leading-none text-white sm:text-2xl">
           {day}
         </p>
 

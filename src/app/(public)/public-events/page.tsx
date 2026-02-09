@@ -48,9 +48,9 @@ export default function PublicEventsPage() {
   const filtered = useMemo(() => applyFilters(events, filters), [events, filters]);
 
   return (
-    <div className="px-4 max-w-5xl mx-auto ">
+    <main className="mx-auto max-w-5xl px-4 text-white/90">
       {/* hero image + title */}
-            <section className="relative h-[220px] sm:h-[280px] md:h-[320px] bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
+      <section className="relative h-[220px] sm:h-[280px] md:h-[320px] bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 text-center">
@@ -70,9 +70,9 @@ export default function PublicEventsPage() {
         </div>
       </section>
 
-      <div className=" bg-gray-100 p-4">
-        <h2 className="font-semibold text-vt-maroon text-2xl">Join Us at Veterans@VT</h2>
-        <p className="text-gray-600">
+      <div className="bg-[#14171a] p-4">
+        <h2 className="text-2xl font-semibold text-white/95">Join Us at Veterans@VT</h2>
+        <p className="text-white/80">
           Explore our upcoming events designed to connect, support, or to get involved.
         </p>
         <EventsFilter
@@ -88,13 +88,12 @@ export default function PublicEventsPage() {
           <EventCard key={event.uid} event={event} />
         ))}
       </div>
-      <div className='flex justify-center p-4'>
-        <button className="rounded-md p-4 bg-vt-impactOrange hover:bg-vt-maroon text-white font-bold hover: cursor-pointer transition">
+      <div className="flex justify-center p-4">
+        <button className="rounded-md bg-vt-impactOrange p-4 font-bold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg">
                 View Full Calendar (Requires Login)
         </button>
     
     </div>
-    </div>
+    </main>
   );
 }
-

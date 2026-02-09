@@ -14,15 +14,15 @@ export default function MobileNavBar() {
         <div className="relative md:hidden">
             {/*Hamburger menu button*/}
             <button onClick={() => setIsOpen(true)}
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center rounded-md p-2 text-white/80 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-vt-impactOrange"
                 aria-label="Open navigation menu"
                 aria-expanded={isOpen}>
 
                     <span className="sr-only">Open menu</span>
                     <div className="space-y-1">
-                        <span className="block h-0.5 w-6 bg-gray-800"></span>
-                        <span className="block h-0.5 w-6 bg-gray-800"></span>
-                        <span className="block h-0.5 w-6 bg-gray-800"></span>
+                        <span className="block h-0.5 w-6 bg-white/90"></span>
+                        <span className="block h-0.5 w-6 bg-white/90"></span>
+                        <span className="block h-0.5 w-6 bg-white/90"></span>
                     </div>
             </button>
 
@@ -33,17 +33,17 @@ export default function MobileNavBar() {
             )}
         {/* Slide-over menu (links only) */}
             <aside
-                className={`fixed right-0 top-0 z-50 h-full w-72 bg-white shadow-lg transition-transform duration-300 ${
+                className={`fixed right-0 top-0 z-50 h-full w-72 bg-[#14171a] text-white/90 shadow-lg transition-transform duration-300 ${
                 isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
                 aria-hidden={!isOpen}
             >
-                <div className="flex items-center justify-between border-b px-4 py-4">
-                <span className="text-sm font-semibold text-gray-700">Menu</span>
+                <div className="flex items-center justify-between border-b border-white/10 px-4 py-4">
+                <span className="text-sm font-semibold text-white/90">Menu</span>
                 <button
                     onClick={() => setIsOpen(false)}
                     aria-label="Close navigation menu"
-                    className="rounded-md p-2 hover:bg-gray-100"
+                    className="rounded-md p-2 hover:bg-white/10"
                 >
                     ✕
                 </button>
@@ -61,7 +61,7 @@ export default function MobileNavBar() {
                     </Link>
                 ))}
                 </nav>
-                <Link className="bg-vt-impactOrange text-white p-4 rounded-md hover:bg-vt-maroon" href="/login">Calendar (Requires Login)</Link>
+                <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg" href="/login">Calendar (Requires Login)</Link>
             </aside> 
         </div>
         );
