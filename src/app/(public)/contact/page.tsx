@@ -12,7 +12,7 @@ export default function ContactPage() {
         {/* subtle overlay for contrast */}
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
-        <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 sm:px-6 lg:px-10 pb-6 sm:pb-8">
+        <div className="relative mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 text-center">
           <h1 className="text-3xl sm:text-5xl font-vt-bold text-white">
             Contact Us
           </h1>

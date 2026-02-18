@@ -20,7 +20,7 @@ export default function Home() {
       <section aria-label="Veterans@VT introduction" className="w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8">
           <Reveal>
-            <div className="rounded-2xl bg-gradient-to-br from-vt-maroon/40 via-vt-impactOrange/25 to-vt-hokieStone/30 p-[1px] transition-all duration-300 hover:shadow-xl">
+            <div className="rounded-2xl bg-gradient-to-br from-vt-maroon/90 to-vt-impactOrange/90 p-[7px] transition-all duration-200 hover:shadow-xl">
               <div className="relative overflow-hidden rounded-2xl bg-black/5 dark:bg-[#1a1e22]">
             {/* Background image */}
             <div className="relative min-h-[360px] sm:min-h-[420px] lg:min-h-[520px] transition-transform duration-500 hover:scale-[1.01]">
@@ -84,7 +84,7 @@ export default function Home() {
       {/* MISSION + STUDY SPACE */}
       <section
         aria-label="Mission and study space"
-        className="w-full bg-vt-smoke/60 py-10 sm:py-12 dark:bg-[#14171a]"
+        className="w-full dark:bg-[#14171a] py-10 sm:py-12"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
@@ -92,12 +92,6 @@ export default function Home() {
             <Reveal delayMs={50}>
               <div className="flex h-full flex-col justify-center rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#1a1e22] sm:p-8">
                 <div className="flex items-center gap-3">
-                  <span
-                    aria-hidden
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-vt-maroon/10 text-vt-maroon"
-                  >
-                    VT
-                  </span>
                   <h2 className="text-2xl font-[var(--font-vt-bold)] text-vt-maroon dark:text-white">
                     Our Mission
                   </h2>
@@ -156,16 +150,12 @@ export default function Home() {
 
                 <div className="flex h-full flex-col justify-center p-6 sm:p-8">
                   <h3 className="text-2xl font-[var(--font-vt-bold)] text-vt-maroon dark:text-white">
-                    Veterans Study Space
-                  </h3>
-                  <p className="mt-1 text-base text-black/75 dark:text-white/85">
                     VetZone @ Johnson Student Center
-                  </p>
+                  </h3>
 
                   <ul className="mt-4 space-y-2 text-base text-black/85 dark:text-white/90">
                     <li className="flex gap-2">
-                      <span aria-hidden className="mt-0.5 text-vt-impactOrange">•</span>
-                      <span>Vet lounge with free printers, computers, TV, and more</span>
+                      <span>Veteran lounge space for studying and socializing</span>
                     </li>
                   </ul>
 
@@ -195,7 +185,6 @@ export default function Home() {
             <Reveal delayMs={60}>
               <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#1a1e22]">
                 <div className="flex items-center gap-3 bg-vt-maroon px-6 py-4 text-white">
-                  <span aria-hidden className="text-lg">📅</span>
                   <h2 className="text-xl font-[var(--font-vt-bold)]">Upcoming Events</h2>
                 </div>
 
@@ -214,7 +203,7 @@ export default function Home() {
                             🗓️
                           </div>
                           <div>
-                            <p className="text-base font-semibold">{e.title}</p>
+                            <p className="text-black font-semibold">{e.title}</p>
                             {e.subtitle ? (
                               <p className="text-sm text-black/70 dark:text-white/85">{e.subtitle}</p>
                             ) : null}

@@ -22,9 +22,6 @@ export default function ResourcesPage() {
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 text-center">
           <h1 className="text-4xl sm:text-5xl font-vt-bold text-white">Resources</h1>
-          <p className="mt-2 max-w-2xl text-white/85 text-sm sm:text-base">
-            Forms, guides, and information packets you can download, print, and keep handy.
-          </p>
 
           <nav aria-label="Breadcrumb" className="mt-3 text-xs sm:text-sm text-white/80">
             <ol className="flex items-center gap-2">

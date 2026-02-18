@@ -48,12 +48,12 @@ export default function PublicEventsPage() {
   const filtered = useMemo(() => applyFilters(events, filters), [events, filters]);
 
   return (
-    <main className="mx-auto max-w-5xl px-4 text-white/90">
-      {/* hero image + title */}
-      <section className="relative h-[220px] sm:h-[280px] md:h-[320px] bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
+    <>
+      {/* hero image + title - full width gradient */}
+      <section className="relative h-[220px] sm:h-[280px] md:h-[320px] w-full bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
-        <div className="relative mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 text-center">
+        <div className="relative mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 text-center">
           <h1 className="text-4xl sm:text-5xl font-vt-bold text-white">Upcoming Events</h1>
 
           <nav aria-label="Breadcrumb" className="mt-3 text-xs sm:text-sm text-white/80">
@@ -70,30 +70,32 @@ export default function PublicEventsPage() {
         </div>
       </section>
 
-      <div className="bg-[#14171a] p-4">
-        <h2 className="text-2xl font-semibold text-white/95">Join Us at Veterans@VT</h2>
-        <p className="text-white/80">
-          Explore our upcoming events designed to connect, support, or to get involved.
-        </p>
-        <EventsFilter
-          value={filters}
-          onChange={setFilters}
-          onClear={() => setFilters({ timeRange: "NEXT_30_DAYS", location: "ALL" })}
-        />
+      {/* constrained content */}
+      <main className="mx-auto max-w-5xl px-4 text-white/90">
+        <div className="bg-[#14171a] p-4">
+          <h2 className="text-2xl font-semibold text-white/95">Join Us at Veterans@VT</h2>
+          <p className="text-white/80">
+            Explore our upcoming events designed to connect, support, or to get involved.
+          </p>
+          <EventsFilter
+            value={filters}
+            onChange={setFilters}
+            onClear={() => setFilters({ timeRange: "NEXT_30_DAYS", location: "ALL" })}
+          />
+        </div>
 
-      </div>
+        <div className="flex flex-col max-w-5xl gap-4 p-4">
+          {filtered.map((event) => (
+            <EventCard key={event.uid} event={event} />
+          ))}
+        </div>
 
-      <div className="flex flex-col gap-4 p-4">
-        {filtered.map((event) => (
-          <EventCard key={event.uid} event={event} />
-        ))}
-      </div>
-      <div className="flex justify-center p-4">
-        <button className="rounded-md bg-vt-impactOrange p-4 font-bold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg">
-                View Full Calendar (Requires Login)
-        </button>
-    
-    </div>
-    </main>
+        <div className="flex justify-center p-4">
+          <button className="rounded-md bg-vt-impactOrange p-4 font-bold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg">
+            View Full Calendar (Requires Login)
+          </button>
+        </div>
+      </main>
+    </>
   );
 }
