@@ -28,7 +28,7 @@ export default function RootLayout({
         <Header />
 
         {/* Page Content */}
-        <main className="flex-1">
+        <main className="flex-1 bg-white dark:bg-[#14171a]">
           {children}
         </main>
         

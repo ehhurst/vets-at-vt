@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Header() {
     return(
-        <header className="w-full flex items-center justify-between px-8 shadow-md bg-[#14171a] text-white/90">
+        <header className="w-full flex items-center justify-between px-8 shadow-md bg-white dark:bg-[#14171a] text-black dark:text-white">
             {/* Logo and site title- title is hidden for mobile, both link to homepage */}
             <Link href="/" className="flex items-center gap-4">
                 <div className="flex items-center gap-4">
@@ -19,7 +19,9 @@ export default function Header() {
                         height={15}
                         priority
                     />
-                    <h1 className="hidden md:block text-vt-smoke/90 font-vt-extrabold text-3xl font-bold">Veterans@VT</h1>
+                    <h1 className="hidden md:block text-black dark:text-white font-[var(--font-vt-extrabold)] text-3xl font-bold">
+                        Veterans@VT
+                    </h1>
                 </div>
             </Link>
 
