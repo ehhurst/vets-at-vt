@@ -71,10 +71,10 @@ export default function PublicEventsPage() {
       </section>
 
       {/* constrained content */}
-      <main className="mx-auto max-w-5xl px-4 text-white/90">
-        <div className="bg-[#14171a] p-4">
-          <h2 className="text-2xl font-semibold text-white/95">Join Us at Veterans@VT</h2>
-          <p className="text-white/80">
+      <main className="mx-auto max-w-5xl px-4 text-black/90 dark:text-white/90">
+        <div className="bg-white dark:bg-[#14171a] p-4">
+          <h2 className="text-2xl font-semibold text-black/95 dark:text-white/95">Join Us at Veterans@VT</h2>
+          <p className="text-black/80 dark:text-white/80">
             Explore our upcoming events designed to connect, support, or to get involved.
           </p>
           <EventsFilter

@@ -14,15 +14,15 @@ export default function MobileNavBar() {
         <div className="relative md:hidden">
             {/*Hamburger menu button*/}
             <button onClick={() => setIsOpen(true)}
-                className="inline-flex items-center justify-center rounded-md p-2 text-white/80 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-vt-impactOrange"
+                className="inline-flex items-center justify-center rounded-md p-2 text-black/80 dark:text-white/80 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-vt-impactOrange"
                 aria-label="Open navigation menu"
                 aria-expanded={isOpen}>
 
                     <span className="sr-only">Open menu</span>
                     <div className="space-y-1">
-                        <span className="block h-0.5 w-6 bg-white/90"></span>
-                        <span className="block h-0.5 w-6 bg-white/90"></span>
-                        <span className="block h-0.5 w-6 bg-white/90"></span>
+                        <span className="block h-0.5 w-6 bg-black/90 dark:bg-white/90"></span>
+                        <span className="block h-0.5 w-6 bg-black/90 dark:bg-white/90"></span>
+                        <span className="block h-0.5 w-6 bg-black/90 dark:bg-white/90"></span>
                     </div>
             </button>
 

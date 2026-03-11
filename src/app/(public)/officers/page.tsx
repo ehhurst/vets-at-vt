@@ -10,7 +10,7 @@ export default function OfficersPage() {
 
 
     return(
-    <main className="min-h-content font-[var(--font-vt-normal)] text-white/90">
+    <main className="min-h-content font-[var(--font-vt-normal)] bg-white dark:bg-[#14171a] text-black/90 dark:text-white/90">
         {/*Hero/title section*/}
         <div className="relative h-[220px] sm:h-[280px] md:h-[320px] w-full bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
             <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
@@ -41,7 +41,7 @@ export default function OfficersPage() {
         {/*executive board*/}
         <section id="executive-board" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 mt-8 sm:mt-10 mb-10">
             <Reveal>
-                <h2 className="text-xl font-vt-extrabold text-white/95 sm:text-2xl">Executive Board</h2>
+                <h2 className="text-xl font-vt-extrabold text-black/95 dark:text-white/95 sm:text-2xl">Executive Board</h2>
             </Reveal>
             {/*card grid*/}
             <div className="mt-5 grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2">
@@ -65,7 +65,7 @@ export default function OfficersPage() {
         {/*chairs*/}
         <section id="chairs" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 mt-8 sm:mt-10 mb-10">
             <Reveal>
-                <h2 className="text-xl font-vt-extrabold text-white/95 sm:text-2xl">Chairs</h2>
+                <h2 className="text-xl font-vt-extrabold text-black/95 dark:text-white/95 sm:text-2xl">Chairs</h2>
             </Reveal>
             <div className="mt-5 grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2">
                 {chairs_list ? chairs_list.map((officer:Officer, i:number) =>

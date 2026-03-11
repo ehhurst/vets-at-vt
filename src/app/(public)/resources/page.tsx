@@ -15,7 +15,7 @@ export default function ResourcesPage() {
   const categories = uniqueCategories(fakeResources);
 
   return (
-    <main className="w-full text-white/90">
+    <main className="w-full text-black/90 dark:text-white/90">
       {/* HERO — placeholder (no image yet) */}
       <section className="relative h-[220px] sm:h-[280px] md:h-[320px] bg-gradient-to-br from-vt-maroon to-vt-impactOrange">
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
@@ -38,10 +38,10 @@ export default function ResourcesPage() {
       </section>
 
       {/* INTRO BAND */}
-      <section className="bg-[#14171a]">
+      <section className="bg-white dark:bg-[#14171a]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 py-8 sm:py-10">
-          <h2 className="text-3xl font-vt-extrabold text-white/95">Download & Print</h2>
-          <p className="mt-2 max-w-3xl text-base font-vt-normal text-white/80 sm:text-lg">
+          <h2 className="text-3xl font-vt-extrabold text-black/95 dark:text-white/95">Download & Print</h2>
+          <p className="mt-2 max-w-3xl text-base font-vt-normal text-black/80 dark:text-white/80 sm:text-lg">
             Access commonly used veteran forms and information packets. Most items are provided as printable PDFs for convenience.
           </p>
 
@@ -51,8 +51,8 @@ export default function ResourcesPage() {
           </div>
 
           {/* Helpful note */}
-          <div className="mt-8 rounded-xl border border-white/10 bg-[#1a1e22] p-5 shadow-sm">
-            <p className="text-sm text-white/80">
+          <div className="mt-8 rounded-xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#1a1e22] p-5 shadow-sm">
+            <p className="text-sm text-black/80 dark:text-white/80">
               <span className="font-vt-bold">Important:</span> These documents are provided for informational purposes. For official submission requirements and deadlines, consult Virginia Tech or the VA directly.
             </p>
           </div>
@@ -67,17 +67,17 @@ export default function ResourcesPage() {
                 <section key={cat} id={sectionId(cat)} className="scroll-mt-24">
                   <div className="flex items-end justify-between gap-4">
                     <div>
-                      <h3 className="text-2xl font-vt-bold text-white/95">
+                      <h3 className="text-2xl font-vt-bold text-black/95 dark:text-white/95">
                         {meta.title}
                       </h3>
-                      <p className="mt-1 text-sm text-white/70">
+                      <p className="mt-1 text-sm text-black/70 dark:text-white/70">
                         {meta.desc}
                       </p>
                     </div>
 
                     <a
                       href="#top"
-                      className="hidden sm:inline text-sm font-semibold text-white/80 hover:text-vt-impactOrange hover:underline underline-offset-2"
+                      className="hidden sm:inline text-sm font-semibold text-black/80 dark:text-white/80 hover:text-vt-impactOrange hover:underline underline-offset-2"
                     >
                       Back to top
                     </a>

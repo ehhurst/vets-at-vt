@@ -28,7 +28,7 @@ export default function NavBar() {
 
                 {/* vertical divider */ }
                 <li> 
-                    <div className="border-l border-white/20 h-8"></div>
+                    <div className="border-l border-black/20 dark:border-white/20 h-8"></div>
                 </li>
                 {/* calendar link button */ }
                 <li>

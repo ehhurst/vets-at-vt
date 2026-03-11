@@ -17,11 +17,11 @@ export default function Home() {
   return (
     <main className="font-[var(--font-vt-normal)]">
       {/* HERO */}
-      <section aria-label="Veterans@VT introduction" className="w-full">
+      <section aria-label="Veterans@VT introduction" className="w-full bg-white dark:bg-[#14171a]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8">
           <Reveal>
             <div className="rounded-2xl bg-gradient-to-br from-vt-maroon/90 to-vt-impactOrange/90 p-[7px] transition-all duration-200 hover:shadow-xl">
-              <div className="relative overflow-hidden rounded-2xl bg-black/5 dark:bg-[#1a1e22]">
+              <div className="relative overflow-hidden rounded-2xl bg-black/5 bg-white dark:bg-[#1a1e22]">
             {/* Background image */}
             <div className="relative min-h-[360px] sm:min-h-[420px] lg:min-h-[520px] transition-transform duration-500 hover:scale-[1.01]">
               <Image
@@ -84,7 +84,7 @@ export default function Home() {
       {/* MISSION + STUDY SPACE */}
       <section
         aria-label="Mission and study space"
-        className="w-full dark:bg-[#14171a] py-10 sm:py-12"
+        className="w-full bg-white dark:bg-[#14171a] py-10 sm:py-12"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
@@ -178,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* UPCOMING EVENTS + ABOUT */}
-      <section aria-label="Upcoming events and about" className="w-full py-10 sm:py-12">
+      <section aria-label="Upcoming events and about" className="w-full bg-white dark:bg-[#14171a] py-10 sm:py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 pb-4">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
             {/* Upcoming Events */}
@@ -203,7 +203,7 @@ export default function Home() {
                             🗓️
                           </div>
                           <div>
-                            <p className="text-black font-semibold">{e.title}</p>
+                            <p className="text-black dark:text-white font-semibold">{e.title}</p>
                             {e.subtitle ? (
                               <p className="text-sm text-black/70 dark:text-white/85">{e.subtitle}</p>
                             ) : null}

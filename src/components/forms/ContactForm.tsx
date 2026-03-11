@@ -41,14 +41,14 @@ export default function ContactForm() {
   return (
 
 
-    <form onSubmit={handleSubmit} className="space-y-4 text-white/90">
+    <form onSubmit={handleSubmit} className="space-y-4 text-black/90 dark:text-white/90">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white/80">
+        <label htmlFor="name" className="block text-sm font-medium text-black/80 dark:text-white/80">
           Name
         </label>
         <input
           id="name"
-          className="mt-1 w-full rounded-md border border-white/10 bg-[#20252a] px-3 py-2 text-white/90 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
+          className="mt-1 w-full rounded-md border border-black/10 dark:border-white/10 bg-gray-100 dark:bg-[#20252a] px-3 py-2 text-black/90 dark:text-white/90 placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Name"
@@ -57,13 +57,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="userEmail" className="block text-sm font-medium text-white/80">
+        <label htmlFor="userEmail" className="block text-sm font-medium text-black/80 dark:text-white/80">
           Email <span className="text-red-500">*</span>
         </label>
         <input
           id="userEmail"
           type="email"
-          className="mt-1 w-full rounded-md border border-white/10 bg-[#20252a] px-3 py-2 text-white/90 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
+          className="mt-1 w-full rounded-md border border-black/10 dark:border-white/10 bg-gray-100 dark:bg-[#20252a] px-3 py-2 text-black/90 dark:text-white/90 placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
           value={userEmail}
           onChange={(e) => setUserEmail(e.target.value)}
           placeholder="you@example.com"
@@ -72,13 +72,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="userMessage" className="block text-sm font-medium text-white/80">
+        <label htmlFor="userMessage" className="block text-sm font-medium text-black/80 dark:text-white/80">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
           id="userMessage"
           rows={6}
-          className="mt-1 w-full rounded-md border border-white/10 bg-[#20252a] px-3 py-2 text-white/90 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
+          className="mt-1 w-full rounded-md border border-black/10 dark:border-white/10 bg-gray-100 dark:bg-[#20252a] px-3 py-2 text-black/90 dark:text-white/90 placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
           placeholder="Enter your message here..."
