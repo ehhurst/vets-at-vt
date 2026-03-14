@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navLinks } from "../../types/NavLinks";
-import { getLinkClasses } from "../../utils/NavUtils";
+import { navLinks } from "@/types/NavLinks";
+import { getLinkClasses } from "@/utils/NavUtils";
 
 export default function MobileNavBar() {
     const pathname = usePathname();
@@ -61,7 +61,7 @@ export default function MobileNavBar() {
                     </Link>
                 ))}
                 </nav>
-                <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg" href="/login">Calendar (Requires Login)</Link>
+                <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg" href="/login">Member Login</Link>
             </aside> 
         </div>
         );

@@ -1,8 +1,9 @@
-import ContactForm from "@/src/components/forms/ContactForm";
+import ContactForm from "@/components/forms/ContactForm";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import Link from "next/link";
+import Reveal from "@/components/animations/Reveal";
 
 export default function ContactPage() {
   return (
@@ -50,88 +51,98 @@ export default function ContactPage() {
           {/* FORM + INFO CARDS */}
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
             {/* LEFT: CONTACT FORM CARD */}
-            <section
-              className="rounded-xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#1a1e22] p-6 shadow-lg sm:p-8"
-              aria-label="Contact form"
-            >
-              <h3 className="text-xl font-vt-bold text-black/95 dark:text-white/95">
-                Contact Form
-              </h3>
+            <Reveal delayMs={60}>
+              <section
+                className="rounded-xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#1a1e22] p-6 shadow-lg sm:p-8"
+                aria-label="Contact form"
+              >
+                <h3 className="text-xl font-vt-bold text-black/95 dark:text-white/95">
+                  Contact Form
+                </h3>
 
-              <div className="mt-4">
-                <ContactForm />
-              </div>
-            </section>
+                <div className="mt-4">
+                  <ContactForm />
+                </div>
+              </section>
+            </Reveal>
 
             {/* RIGHT: CONTACT INFO CARD */}
-            <section
-              className="rounded-xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#1a1e22] p-6 shadow-lg sm:p-8"
-              aria-label="Contact information"
-            >
-              <h3 className="text-xl font-vt-bold text-black/95 dark:text-white/95">
-                Contact Info
-              </h3>
+            <Reveal delayMs={140}>
+              <section
+                className="rounded-xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#1a1e22] p-6 shadow-lg sm:p-8"
+                aria-label="Contact information"
+              >
+                <h3 className="text-xl font-vt-bold text-black/95 dark:text-white/95">
+                  Contact Info
+                </h3>
 
-              <div className="mt-5 space-y-4">
-                {/* VISIT US */}
-                <div className="rounded-lg border border-black/10 dark:border-white/10 p-4">
-                  <div className="flex items-start gap-3">
-                    <MdLocationPin
-                      aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-vt-impactOrange"
-                      size={22}
-                    />
-                    <div>
-                      <p className="font-vt-bold text-black/90 dark:text-white/90">Visit Us</p>
-                      <p className="mt-1 text-sm text-black/70 dark:text-white/70">
-                        Student Veterans Lounge
-                        <br />
-                        VetZone – Johnson Student Center
-                        <br />
-                        Blacksburg, VA
-                      </p>
+                <div className="mt-5 space-y-4">
+                  {/* VISIT US */}
+                  <Reveal delayMs={200}>
+                    <div className="rounded-lg border border-black/10 dark:border-white/10 p-4">
+                      <div className="flex items-start gap-3">
+                        <MdLocationPin
+                          aria-hidden="true"
+                          className="mt-0.5 shrink-0 text-vt-impactOrange"
+                          size={22}
+                        />
+                        <div>
+                          <p className="font-vt-bold text-black/90 dark:text-white/90">Visit Us</p>
+                          <p className="mt-1 text-sm text-black/70 dark:text-white/70">
+                            Student Veterans Lounge
+                            <br />
+                            VetZone – Johnson Student Center
+                            <br />
+                            Blacksburg, VA
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </Reveal>
 
-                {/* EMAIL US */}
-                <div className="rounded-lg border border-black/10 dark:border-white/10 p-4">
-                  <div className="flex items-start gap-3">
-                    <IoIosMail
-                      aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-vt-impactOrange"
-                      size={22}
-                    />
-                    <div>
-                      <p className="font-vt-bold text-black/90 dark:text-white/90">Email Us</p>
-                      <a
-                        href="mailto:veterans@vt.edu"
-                        className="mt-1 inline-block text-sm text-black/85 dark:text-white/85 underline-offset-2 hover:text-vt-impactOrange hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange focus-visible:ring-offset-2"
-                      >
-                        veterans@vt.edu
-                      </a>
+                  {/* EMAIL US */}
+                  <Reveal delayMs={260}>
+                    <div className="rounded-lg border border-black/10 dark:border-white/10 p-4">
+                      <div className="flex items-start gap-3">
+                        <IoIosMail
+                          aria-hidden="true"
+                          className="mt-0.5 shrink-0 text-vt-impactOrange"
+                          size={22}
+                        />
+                        <div>
+                          <p className="font-vt-bold text-black/90 dark:text-white/90">Email Us</p>
+                          <a
+                            href="mailto:veterans@vt.edu"
+                            className="mt-1 inline-block text-sm text-black/85 dark:text-white/85 underline-offset-2 hover:text-vt-impactOrange hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange focus-visible:ring-offset-2"
+                          >
+                            veterans@vt.edu
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </Reveal>
 
-                {/* CALL US */}
-                <div className="rounded-lg border border-black/10 dark:border-white/10 p-4">
-                  <div className="flex items-start gap-3">
-                    <FaPhoneAlt
-                      aria-hidden="true"
-                      className="mt-1 shrink-0 text-vt-impactOrange"
-                      size={18}
-                    />
-                    <div>
-                      <p className="font-vt-bold text-black/90 dark:text-white/90">Call Us</p>
-                      <p className="mt-1 text-sm text-black/70 dark:text-white/70">
-                        (540) 231-5555
-                      </p>
+                  {/* CALL US */}
+                  <Reveal delayMs={320}>
+                    <div className="rounded-lg border border-black/10 dark:border-white/10 p-4">
+                      <div className="flex items-start gap-3">
+                        <FaPhoneAlt
+                          aria-hidden="true"
+                          className="mt-1 shrink-0 text-vt-impactOrange"
+                          size={18}
+                        />
+                        <div>
+                          <p className="font-vt-bold text-black/90 dark:text-white/90">Call Us</p>
+                          <p className="mt-1 text-sm text-black/70 dark:text-white/70">
+                            (540) 231-5555
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </Reveal>
                 </div>
-              </div>
-            </section>
+              </section>
+            </Reveal>
           </div>
         </div>
       </section>

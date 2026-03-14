@@ -1,6 +1,6 @@
 "use client";
 
-import { dayNames, monthNames, DateCardProps } from "@/src/types/Event";
+import { dayNames, monthNames, DateCardProps } from "@/types/Event";
 
 export default function DateCard({ isoDate }: DateCardProps) {
   const date = new Date(isoDate);

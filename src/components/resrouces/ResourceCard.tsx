@@ -1,6 +1,6 @@
 "use client";
 
-import { ResourceItem } from "@/src/types/Resource";
+import { ResourceItem } from "@/types/Resource";
 import { MdDownload, MdPrint, MdInsertDriveFile } from "react-icons/md";
 
 function formatUpdated(dateISO?: string) {

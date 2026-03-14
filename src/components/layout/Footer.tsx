@@ -1,7 +1,7 @@
 "use client";
 
-import FooterNavBar from "../nav/FooterNavBar";
-import { IconLink } from "../../utils/IconLinkUtil";
+import FooterNavBar from "@/components/nav/FooterNavBar";
+import { IconLink } from "@/utils/IconLinkUtil";
 
 import { FaFacebook, FaRegCalendarAlt, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GrLocationPin } from "react-icons/gr";

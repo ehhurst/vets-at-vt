@@ -1,8 +1,8 @@
 "use client";
 
-import DateCard from "@/src/components/events/DateCard";
-import { Event } from "@/src/types/Event";
-import { formatDate, formatTimeRange } from "@/src/utils/date";
+import DateCard from "@/components/events/DateCard";
+import { Event } from "@/types/Event";
+import { formatDate, formatTimeRange } from "@/utils/date";
 
 export default function EventCard({ event }: { event: Event }) {
   return (

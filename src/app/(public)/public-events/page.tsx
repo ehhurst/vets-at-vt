@@ -1,11 +1,12 @@
 "use client";
 
-import EventCard from "@/src/components/events/EventCard";
-import { Event } from "@/src/types/Event";
-import { fakeCalendarResponse } from "@/src/types/FakeCalendarResponse";
+import EventCard from "@/components/events/EventCard";
+import { Event } from "@/types/Event";
+import { fakeCalendarResponse } from "@/types/FakeCalendarResponse";
 import { useMemo, useState } from "react";
-import EventsFilter, { EventsFilters } from "@/src/components/events/EventsFilter";
+import EventsFilter, { EventsFilters } from "@/components/events/EventsFilter";
 import Link from "next/link";
+import Reveal from "@/components/animations/Reveal";
 
 function isOnlineLocation(location?: string) {
   if (!location) return false;
@@ -85,15 +86,20 @@ export default function PublicEventsPage() {
         </div>
 
         <div className="flex flex-col max-w-5xl gap-4 p-4">
-          {filtered.map((event) => (
-            <EventCard key={event.uid} event={event} />
+          {filtered.map((event, index) => (
+            <Reveal key={event.uid} delayMs={80 + index * 60}>
+              <EventCard event={event} />
+            </Reveal>
           ))}
         </div>
 
         <div className="flex justify-center p-4">
-          <button className="rounded-md bg-vt-impactOrange p-4 font-bold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg">
+          <Link
+            href="/login"
+            className="cursor-pointer rounded-md bg-vt-maroon p-4 font-bold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
+          >
             View Full Calendar (Requires Login)
-          </button>
+          </Link>
         </div>
       </main>
     </>

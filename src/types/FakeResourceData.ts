@@ -1,4 +1,4 @@
-import { ResourceItem } from "./Resource";
+import { ResourceItem } from "@/types/Resource";
 
 export const fakeResources: ResourceItem[] = [
   // ACADEMIC

@@ -1,6 +1,6 @@
 "use client";
 
-import { ResourceCategory } from "@/src/types/Resource";
+import { ResourceCategory } from "@/types/Resource";
 import { MdSchool, MdVerified, MdDiversity3, MdHealthAndSafety, MdChecklist } from "react-icons/md";
 
 const categoryMeta: Record<ResourceCategory, { title: string; desc: string; icon: React.ReactNode }> = {

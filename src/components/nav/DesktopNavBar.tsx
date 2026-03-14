@@ -1,7 +1,7 @@
 "use client";
 
-import {navLinks} from "../../types/NavLinks";
-import { getLinkClasses } from "../../utils/NavUtils";
+import { navLinks } from "@/types/NavLinks";
+import { getLinkClasses } from "@/utils/NavUtils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -30,9 +30,9 @@ export default function NavBar() {
                 <li> 
                     <div className="border-l border-black/20 dark:border-white/20 h-8"></div>
                 </li>
-                {/* calendar link button */ }
+                {/* login button */ }
                 <li>
-                    <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg dark:bg-vt-maroon" href="/login">Calendar (Requires Login)</Link>
+                    <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg dark:bg-vt-maroon" href="/login">Member Login</Link>
                 </li>
             </ul>
         </nav>
