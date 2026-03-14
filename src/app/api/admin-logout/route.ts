@@ -1,10 +1,13 @@
+import { NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-export async function createServerSupabaseClient() {
+export async function GET(request: Request) {
+  const requestUrl = new URL(request.url);
+  const next = requestUrl.searchParams.get("next") || "/";
   const cookieStore = await cookies();
-
-  return createServerClient(
+  const response = NextResponse.redirect(new URL(next, requestUrl.origin));
+  const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
     {
@@ -14,10 +17,14 @@ export async function createServerSupabaseClient() {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            cookieStore.set(name, value, options);
+            response.cookies.set(name, value, options);
           });
         },
       },
     }
   );
+
+  await supabase.auth.signOut();
+
+  return response;
 }

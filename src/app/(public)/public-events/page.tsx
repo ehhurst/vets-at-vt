@@ -95,7 +95,7 @@ export default function PublicEventsPage() {
 
         <div className="flex justify-center p-4">
           <Link
-            href="/login"
+            href="/member-login"
             className="cursor-pointer rounded-md bg-vt-maroon p-4 font-bold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
           >
             View Full Calendar (Requires Login)
