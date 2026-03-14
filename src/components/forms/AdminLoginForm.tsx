@@ -273,7 +273,7 @@ export default function AdminLoginForm({
           <p className="mt-6 text-center text-sm text-white/70">
             Need the shared member area?{" "}
             <Link
-              href="/login"
+              href="/member-login"
               className="font-semibold text-vt-impactOrange underline-offset-2 hover:underline"
             >
               Go to member login

@@ -5,10 +5,21 @@ import { useState } from "react";
 import { navLinks } from "@/types/NavLinks";
 import { getLinkClasses } from "@/utils/NavUtils";
 
-export default function MobileNavBar() {
+export default function MobileNavBar({
+    hasMemberSession,
+    adminName,
+}: {
+    hasMemberSession: boolean;
+    adminName: string | null;
+}) {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const linkClasses = (href: string) => getLinkClasses(pathname, href);
+    const links = [
+      ...navLinks,
+      ...(hasMemberSession || adminName ? [{ href: "/members/calendar", label: "Member Calendar" }] : []),
+      ...(adminName ? [{ href: "/admin/dashboard", label: "Admin Dashboard" }] : []),
+    ];
 
     return (
         <div className="relative md:hidden">
@@ -50,7 +61,7 @@ export default function MobileNavBar() {
                 </div>
 
                 <nav className="flex flex-col gap-2 px-4 py-6">
-                {navLinks.map(({ href, label }) => (
+                {links.map(({ href, label }) => (
                     <Link
                     key={href}
                     href={href}
@@ -61,7 +72,37 @@ export default function MobileNavBar() {
                     </Link>
                 ))}
                 </nav>
-                <Link className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg" href="/login">Member Login</Link>
+                {adminName ? (
+                  <div className="p-4 text-center">
+                    <p className="text-sm font-semibold text-white/90">{`Welcome, ${adminName}!`}</p>
+                    <a
+                      className="mt-3 inline-flex min-w-full items-center justify-center rounded-md bg-vt-impactOrange px-4 py-2 text-sm font-semibold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
+                      href="/api/admin-logout?next=/"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Logout
+                    </a>
+                  </div>
+                ) : hasMemberSession ? (
+                  <div className="p-4 text-center">
+                    <p className="text-sm font-semibold text-white/90">Welcome, member!</p>
+                    <a
+                      className="mt-3 inline-flex min-w-full items-center justify-center rounded-md bg-vt-impactOrange px-4 py-2 text-sm font-semibold text-white ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
+                      href="/api/member-logout?next=/"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Logout
+                    </a>
+                  </div>
+                ) : (
+                  <Link
+                    className="bg-vt-impactOrange text-white p-4 rounded-md ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg"
+                    href="/member-login"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Member Login
+                  </Link>
+                )}
             </aside> 
         </div>
         );
