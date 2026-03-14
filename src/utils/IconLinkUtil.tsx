@@ -1,4 +1,4 @@
-import { IconLinkProps } from "../types/IconProps";
+import { IconLinkProps } from "@/types/IconProps";
 
 export function IconLink({href, label, icon, openInNewTab}:IconLinkProps) {
     const externalProps = openInNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {};

@@ -1,7 +1,7 @@
-import OfficerCard from "@/src/components/officers/OfficerCard";
-import Reveal from "@/src/components/animations/Reveal";
-import { officersList } from "@/src/types/FakeOfficersData";
-import { Officer } from "@/src/types/Officer";
+import OfficerCard from "@/components/officers/OfficerCard";
+import Reveal from "@/components/animations/Reveal";
+import { officersList } from "@/types/FakeOfficersData";
+import { Officer } from "@/types/Officer";
 
 
 export default function OfficersPage() {

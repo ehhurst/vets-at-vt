@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {navLinks} from "../../types/NavLinks";
-import { getLinkClasses } from "../../utils/NavUtils";
+import { navLinks } from "@/types/NavLinks";
+import { getLinkClasses } from "@/utils/NavUtils";
 
 
 export default function FooterNavBar() {

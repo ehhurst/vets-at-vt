@@ -1,16 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "../../components/animations/Reveal";
+import Reveal from "@/components/animations/Reveal";
+import DateCard from "@/components/events/DateCard";
 
 type UpcomingEvent = {
   title: string;
-  subtitle?: string;
-  dateLabel: string; // e.g., "Fri, Aug. 30"
+  description: string;
+  location: string;
+  isoDate: string;
 };
 
 const upcoming: UpcomingEvent[] = [
-  { title: "Football Tailgate", subtitle: "Nerdp bunchmatec", dateLabel: "Fri, Aug. 30" },
-  { title: "Laser Tag Night", subtitle: "Noh: aummatace", dateLabel: "Thu, Sept. 5" },
+  {
+    title: "Football Tailgate",
+    description: "Join members before kickoff for food, games, and an easy way to meet new faces.",
+    location: "Lane Stadium tailgate lot",
+    isoDate: "2026-08-30T18:00:00.000Z",
+  },
+  {
+    title: "Laser Tag Night",
+    description: "A casual off-campus social event with team rounds, snacks, and plenty of friendly competition.",
+    location: "NRV Superbowl, Christiansburg",
+    isoDate: "2026-09-05T22:00:00.000Z",
+  },
 ];
 
 export default function Home() {
@@ -18,7 +30,7 @@ export default function Home() {
     <main className="font-[var(--font-vt-normal)]">
       {/* HERO */}
       <section aria-label="Veterans@VT introduction" className="w-full bg-white dark:bg-[#14171a]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
           <Reveal>
             <div className="rounded-2xl bg-gradient-to-br from-vt-maroon/90 to-vt-impactOrange/90 p-[7px] transition-all duration-200 hover:shadow-xl">
               <div className="relative overflow-hidden rounded-2xl bg-black/5 bg-white dark:bg-[#1a1e22]">
@@ -44,19 +56,19 @@ export default function Home() {
                   <p className="text-sm uppercase tracking-[0.2em] text-white/90">
                     Veterans@VT
                   </p>
-                  <h1 className="mt-3 text-balance text-4xl font-[var(--font-vt-extrabold)] tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+                  <h1 className="mt-3 text-balance text-3xl font-[var(--font-vt-extrabold)] tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.05]">
                     Supporting Virginia Tech&apos;s
                     <br />
                     Military-Connected Community
                   </h1>
 
-                  <p className="mt-4 max-w-xl text-pretty text-base text-white/95 sm:text-lg">
+                  <p className="mt-4 max-w-xl text-pretty text-sm text-white/95 sm:text-base">
                     A safe, welcoming space for veterans, service members, and their dependents at VT
                   </p>
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                     <Link
-                      href="/events"
+                      href="/public-events"
                       className="inline-flex min-w-[170px] items-center justify-center rounded-md bg-vt-maroon px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                     >
                       View Events
@@ -77,7 +89,7 @@ export default function Home() {
           </Reveal>
 
 {/* Spacer */}
-          <div className="h-10 sm:h-12" />
+          <div className="h-5 sm:h-6" />
         </div>
       </section>
 
@@ -86,7 +98,7 @@ export default function Home() {
         aria-label="Mission and study space"
         className="w-full bg-white dark:bg-[#14171a] py-10 sm:py-12"
       >
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
             {/* Our Mission */}
             <Reveal delayMs={50}>
@@ -125,7 +137,7 @@ export default function Home() {
                     View Calendar
                   </Link>
                   <Link
-                    href="/events"
+                    href="/public-events"
                     className="inline-flex items-center justify-center rounded-md bg-vt-impactOrange px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
                   >
                     View Events
@@ -159,10 +171,10 @@ export default function Home() {
                     </li>
                   </ul>
 
-                  <div className="mt-6 flex justify-center">
+                  <div className="mt-6">
                     <Link
                       href="https://www.veterans.vt.edu/students/vetzone.html"
-                      className="inline-flex items-center justify-center rounded-md bg-vt-impactOrange px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
+                      className="inline-flex w-full items-center justify-center rounded-md bg-vt-impactOrange px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
                     >
                       Learn More
                     </Link>
@@ -179,8 +191,8 @@ export default function Home() {
 
       {/* UPCOMING EVENTS + ABOUT */}
       <section aria-label="Upcoming events and about" className="w-full bg-white dark:bg-[#14171a] py-10 sm:py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 pb-4">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-4">
+          <div className="grid gap-x-5 gap-y-3 lg:grid-cols-2 lg:gap-x-8">
             {/* Upcoming Events */}
             <Reveal delayMs={60}>
               <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#1a1e22]">
@@ -192,34 +204,31 @@ export default function Home() {
                   <ul className="space-y-4">
                     {upcoming.map((e) => (
                       <li
-                        key={`${e.title}-${e.dateLabel}`}
-                        className="flex items-start justify-between gap-4 rounded-xl border border-black/10 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-vt-impactOrange/40 hover:bg-vt-smoke/60 dark:border-white/10 dark:bg-[#20252a] dark:hover:bg-[#2a3036]"
+                        key={`${e.title}-${e.isoDate}`}
+                        className="flex cursor-pointer items-center gap-4 rounded-xl border border-black/10 bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-vt-impactOrange/40 hover:bg-vt-smoke/60 dark:border-white/10 dark:bg-[#20252a] dark:hover:bg-[#2a3036]"
                       >
-                        <div className="flex items-start gap-3">
-                          <div
-                            className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-md border border-black/10 bg-black/5 text-base dark:border-white/10 dark:bg-white/10"
-                            aria-hidden
-                          >
-                            🗓️
-                          </div>
-                          <div>
-                            <p className="text-black dark:text-white font-semibold">{e.title}</p>
-                            {e.subtitle ? (
-                              <p className="text-sm text-black/70 dark:text-white/85">{e.subtitle}</p>
-                            ) : null}
-                          </div>
+                        <div className="shrink-0">
+                          <DateCard isoDate={e.isoDate} />
                         </div>
 
-                        <p className="shrink-0 text-base font-medium text-black/75 dark:text-white/85">
-                          {e.dateLabel}
-                        </p>
+                        <div className="min-w-0 flex-1">
+                          <div>
+                            <p className="text-black dark:text-white font-semibold">{e.title}</p>
+                            <p className="mt-1 text-sm text-black/70 dark:text-white/85">
+                              {e.description}
+                            </p>
+                            <p className="mt-2 text-sm font-medium text-vt-maroon dark:text-vt-impactOrange">
+                              {e.location}
+                            </p>
+                          </div>
+                        </div>
                       </li>
                     ))}
                   </ul>
 
                   <div className="mt-6">
                     <Link
-                      href="/events"
+                      href="/public-events"
                       className="inline-flex w-full items-center justify-center rounded-md bg-vt-maroon px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-maroon"
                     >
                       View Calendar
@@ -231,25 +240,27 @@ export default function Home() {
 
             {/* About */}
             <Reveal delayMs={140}>
-              <div className="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#1a1e22] sm:p-8">
-                <h2 className="text-2xl font-[var(--font-vt-bold)] text-vt-maroon dark:text-white">
-                  About Veterans@VT
-                </h2>
+              <div className="flex h-full flex-col rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#1a1e22]">
+                <div className="flex h-full flex-col justify-center p-6 sm:p-8">
+                  <h2 className="text-2xl font-[var(--font-vt-bold)] text-vt-maroon dark:text-white">
+                    About Veterans@VT
+                  </h2>
 
-                <p className="mt-4 text-base leading-7 text-black/85 dark:text-white/90">
-                  We are a registered student organization serving veterans, reservists, active duty
-                  members, and dependents at Virginia Tech.
-                </p>
+                  <p className="mt-4 text-base leading-7 text-black/85 dark:text-white/90">
+                    We are a registered student organization serving veterans, reservists, active duty
+                    members, and dependents at Virginia Tech.
+                  </p>
 
-                <p className="mt-4 text-base leading-7 text-black/85 dark:text-white/90">
-                  We are proud to be an active chapter of Student Veterans of America and a diverse,
-                  welcoming community.
-                </p>
+                  <p className="mt-4 text-base leading-7 text-black/85 dark:text-white/90">
+                    We are proud to be an active chapter of Student Veterans of America and a diverse,
+                    welcoming community.
+                  </p>
+                </div>
 
-                <div className="mt-6 flex justify-center">
+                <div className="mt-auto px-6 pb-6 sm:px-8 sm:pb-8">
                   <Link
                     href="/officers"
-                    className="inline-flex items-center justify-center rounded-md bg-vt-burntOrange px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-burntOrange"
+                    className="inline-flex w-full items-center justify-center rounded-md bg-vt-impactOrange px-6 py-3.5 text-base font-semibold text-white shadow-sm ring-2 ring-inset ring-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-vt-impactOrange"
                   >
                     Meet the Officers
                   </Link>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import NavBar from "../nav/NavBar";
+import NavBar from "@/components/nav/NavBar";
 import Link from "next/link";
 
 

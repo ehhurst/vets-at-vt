@@ -1,11 +1,11 @@
-import { Officer } from "@/src/types/Officer";
+import { Officer } from "@/types/Officer";
 import Image from "next/image";
 import { FaPlusCircle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 export default function OfficerCard(officer: Officer) {
     return (
-        <article className="w-full overflow-hidden rounded-lg bg-gray-50 dark:bg-[#1a1e22] shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+        <article className="flex h-full min-h-[320px] w-full flex-col overflow-hidden rounded-lg bg-gray-50 dark:bg-[#1a1e22] shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
             <div className='h-2 bg-vt-impactOrange'/>
 
             {/* Top container: headshot, name, role, email */}
@@ -35,22 +35,22 @@ export default function OfficerCard(officer: Officer) {
             </section>
 
             {/* Description container */}
-            <section className='px-4 pb-4'>
+            <section className='flex-1 px-4 pb-4'>
                 <p className="text-sm leading-relaxed text-black/75 dark:text-white/75 sm:text-base">{officer.description}</p>
 
             </section>
             
-            {/*Brnach section - Conditionally rendered section if officer has a branch */}
-            {officer.branch ? 
-                <section className="bg-gray-100 dark:bg-[#20252a] px-4 py-3">
+            {/*Brnach section - reserved footer height keeps cards aligned */}
+            <section className="mt-auto min-h-12 bg-gray-100 dark:bg-[#20252a] px-4 py-3">
+                {officer.branch ? 
                     <div className="flex items-center gap-2 text-sm text-black/80 dark:text-white/80">
                         <FaPlusCircle className="shrink-0 text-vt-impactOrange"/> 
                         <span className="wrap-break-word">{officer.branch}</span>
                     </div>
-                    
-                </section> : 
-                <></>
-            }
+                    :
+                    <div className="h-5" aria-hidden="true" />
+                }
+            </section>
         </article>
     );
 }
